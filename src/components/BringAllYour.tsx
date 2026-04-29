@@ -8,7 +8,7 @@ export default function BringAllYour() {
       id: 1, 
       tag: "Docs", 
       title: "Simple and powerful.", 
-      color: "#379485", // Hijau Toska
+      color: "bg-[#379485]", 
       wide: false,
       delay: 0.1,
       image: "/Notion1.jpeg" 
@@ -17,7 +17,7 @@ export default function BringAllYour() {
       id: 2, 
       tag: "Knowledge Base", 
       title: "One source of truth for teams and agents.", 
-      color: "#529cca", // Biru
+      color: "bg-[#529cca]", 
       wide: false,
       delay: 0.2,
       image: "/Notion2.jpeg"
@@ -26,7 +26,7 @@ export default function BringAllYour() {
       id: 3, 
       tag: "Projects", 
       title: "Less tracking. More progress.", 
-      color: "#93634b", // Cokelat
+      color: "bg-[#93634b]", 
       wide: true,
       delay: 0.3,
       image: "/Notion3.jpeg"
@@ -34,40 +34,17 @@ export default function BringAllYour() {
   ];
 
   return (
-    <section style={styles.section}>
-      <style>{`
-        .feature-card:hover .mockup-ui {
-          transform: translateY(-8px) !important;
-        }
-        .feature-card:hover .arrow-circle {
-          background: #f0f0f0 !important;
-        }
-        @media (max-width: 768px) {
-          .features-grid {
-            display: flex !important;
-            overflow-x: auto !important;
-            gap: 16px !important;
-            padding-bottom: 20px;
-          }
-          .feature-card {
-            min-width: 85vw !important;
-          }
-          .card-wide {
-            grid-column: span 1 !important;
-          }
-        }
-      `}</style>
-
+    <section className="max-w-[1100px] my-20 mx-auto px-6 font-sans">
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className='text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.1] mb-6 text-[#1a1a2e]'
+        className="text-[50px] font-extrabold mb-[50px] tracking-tight text-black"
       >
         Bring all your work together.
       </motion.h2>
 
-      <div className="features-grid" style={styles.grid}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-5 md:pb-0 scrollbar-hide">
         {cards.map((card) => (
           <motion.div
             key={card.id}
@@ -75,36 +52,43 @@ export default function BringAllYour() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: card.delay, duration: 0.5 }}
             viewport={{ once: true }}
-            className={`feature-card ${card.wide ? 'card-wide' : ''}`}
-            style={{
-              ...styles.card,
-              gridColumn: card.wide ? 'span 2' : 'span 1',
-            }}
+            className={`
+              group relative flex flex-col rounded-2xl overflow-hidden border border-[#efefef] shadow-sm 
+              snap-center min-w-[85vw] md:min-w-full
+              ${card.wide ? 'md:col-span-2' : 'md:col-span-1'}
+            `}
           >
-            {/* Bagian Atas: Background Putih & Teks Hitam */}
-            <div style={styles.topSection}>
+            {/* Bagian Atas: Putih & Teks Hitam */}
+            <div className="p-6 bg-white flex justify-between items-start z-10">
               <div>
-                <span style={styles.cardTag}>{card.tag}</span>
-                <h3 style={styles.cardSubtitle}>{card.title}</h3>
+                <span className="text-xs font-semibold text-gray-500 block mb-1 uppercase tracking-wider">
+                  {card.tag}
+                </span>
+                <h3 className="text-xl font-bold text-black leading-tight max-w-[280px]">
+                  {card.title}
+                </h3>
               </div>
-              <div className="arrow-circle" style={styles.arrowCircle}>
-                <ArrowRight size={18} color="black" />
+              <div className="bg-[#f5f5f5] group-hover:bg-[#f0f0f0] p-2 rounded-full transition-colors duration-200">
+                <ArrowRight size={18} className="text-black" />
               </div>
             </div>
 
-            {/* Bagian Bawah: Background Berwarna & Gambar */}
-            <div style={{ ...styles.bottomSection, backgroundColor: card.color }}>
-              <div className="mockup-ui" style={styles.mockupUi}>
-                <div style={styles.mockupHeader}>
-                  <div style={{...styles.dot, backgroundColor: '#FF605C'}} />
-                  <div style={{...styles.dot, backgroundColor: '#FFBD44'}} />
-                  <div style={{...styles.dot, backgroundColor: '#00CA4E'}} />
+            {/* Bagian Bawah: Warna & Gambar */}
+            <div className={`${card.color} flex-1 px-6 flex flex-col justify-end min-h-[320px]`}>
+              <div className="bg-white rounded-t-xl p-3 h-[260px] translate-y-5 transition-transform duration-500 ease-out group-hover:translate-y-[-8px] shadow-[-4px_-20px_20px_rgba(0,0,0,0.08)]">
+                {/* Header Mockup (Dot) */}
+                <div className="flex gap-1.5 mb-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#FF605C]" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#FFBD44]" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#00CA4E]" />
                 </div>
-                <div style={styles.imageContainer}>
+                
+                {/* Image Wrapper */}
+                <div className="w-full h-full overflow-hidden rounded-sm border border-gray-100">
                   <img 
                     src={card.image} 
                     alt={card.title} 
-                    style={styles.image}
+                    className="w-full h-full object-cover object-top"
                     onError={(e) => {
                       e.currentTarget.src = "https://via.placeholder.com/800x600?text=Image+Not+Found";
                     }}
@@ -116,96 +100,14 @@ export default function BringAllYour() {
         ))}
       </div>
 
-      <div style={styles.forbesContainer}>
-        <p style={styles.quoteText}>"Your AI everything app."</p>
-        <p style={styles.forbesTag}>Forbes</p>
+      <div className="mt-16 text-center">
+        <p className="text-xl italic font-serif text-gray-900">
+          "Your AI everything app."
+        </p>
+        <p className="text-sm font-bold text-gray-400 mt-2 tracking-[0.1em] uppercase">
+          Forbes
+        </p>
       </div>
     </section>
   );
 }
-
-const styles: { [key: string]: React.CSSProperties } = {
-  section: {
-    maxWidth: '1100px',
-    margin: '80px auto',
-    padding: '0 24px',
-    fontFamily: 'Inter, system-ui, sans-serif',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '20px',
-  },
-  card: {
-    borderRadius: '16px',
-    overflow: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
-    border: '1px solid #efefef',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
-  },
-  topSection: {
-    padding: '24px',
-    backgroundColor: '#ffffff',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-  },
-  bottomSection: {
-    flex: 1,
-    padding: '0 24px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    minHeight: '320px',
-  },
-  cardTag: {
-    fontSize: '12px',
-    fontWeight: 600,
-    color: '#666',
-    display: 'block',
-    marginBottom: '4px',
-  },
-  cardSubtitle: {
-    fontSize: '20px',
-    fontWeight: 700,
-    color: '#000',
-    margin: 0,
-  },
-  arrowCircle: {
-    background: '#f5f5f5',
-    borderRadius: '50%',
-    padding: '8px',
-    display: 'flex',
-    transition: '0.2s ease',
-  },
-  mockupUi: {
-    backgroundColor: 'white',
-    borderRadius: '10px 10px 0 0',
-    padding: '12px',
-    height: '260px',
-    transition: 'transform 0.4s ease',
-    boxShadow: '0 -4px 20px rgba(0,0,0,0.08)',
-  },
-  mockupHeader: {
-    display: 'flex',
-    gap: '5px',
-    marginBottom: '10px'
-  },
-  dot: { width: '6px', height: '6px', borderRadius: '50%' },
-  imageContainer: {
-    width: '100%',
-    height: '100%',
-    overflow: 'hidden',
-    borderRadius: '4px',
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    objectPosition: 'top',
-  },
-  forbesContainer: { marginTop: '60px', textAlign: 'center' },
-  quoteText: { fontSize: '20px', fontStyle: 'italic', fontFamily: 'serif' },
-  forbesTag: { fontSize: '14px', fontWeight: 'bold', color: '#888', marginTop: '8px' }
-};
