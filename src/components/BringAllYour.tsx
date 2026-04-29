@@ -62,7 +62,7 @@ export default function BringAllYour() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        style={styles.mainTitle}
+        className='text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[1.1] mb-6 text-[#1a1a2e]'
       >
         Bring all your work together.
       </motion.h2>
@@ -130,13 +130,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     margin: '80px auto',
     padding: '0 24px',
     fontFamily: 'Inter, system-ui, sans-serif',
-  },
-  mainTitle: {
-    fontSize: '40px',
-    fontWeight: 800,
-    textAlign: 'center',
-    marginBottom: '50px',
-    letterSpacing: '-0.02em',
   },
   grid: {
     display: 'grid',
