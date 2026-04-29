@@ -1,24 +1,24 @@
-  import React, { useRef, useState } from "react";
-  import Container from "./ui/Container";
+import React, { useRef, useState } from "react";
+import Container from "./ui/Container";
 
-  const Hero: React.FC = () => {
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const [paused, setPaused] = useState(false);
+const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [paused, setPaused] = useState(false);
 
-    const togglePlay = () => {
-      if (!videoRef.current) return;
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setPaused(false);
-      } else {
-        videoRef.current.pause();
-        setPaused(true);
-      }
-    };
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setPaused(false);
+    } else {
+      videoRef.current.pause();
+      setPaused(true);
+    }
+  };
 
-    return (
-      <section className="relative min-h-screen bg-[#040b3c] overflow-hidden pt-28 pb-0">
-        <style>{`
+  return (
+    <section className="relative min-h-screen bg-[#040b3c] overflow-hidden pt-28 pb-0">
+      <style>{`
     @keyframes pulseglow {
       0%   { opacity: 0.3; }
       10%  { opacity: 0.65; }
