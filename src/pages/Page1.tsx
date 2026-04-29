@@ -1,7 +1,13 @@
+import MoreProductivity from "../components/MoreProductivity";
+import TrustedByTeams from "../components/TrustedByTeams";
+import TryForFree from "../components/TryForFree";
+
 export default function Page1() {
-    return (
-        <div className="h-[calc(100vh-4rem)] flex justify-center items-center">
-            <h1>Page 1</h1>
-        </div>
-    )
+  return (
+    <div>
+      <MoreProductivity />
+      <TrustedByTeams />
+      <TryForFree />
+    </div>
+  );
 }
