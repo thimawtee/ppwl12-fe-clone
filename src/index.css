@@ -179,3 +179,33 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gold);
   color: #0a0a0c;
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Notion Section Override (Audy) */
+.notion-section h1,
+.notion-section h2,
+.notion-section h3,
+.notion-section h4,
+.notion-section h5,
+.notion-section h6 {
+  color: #111827 !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+  font-weight: 700;
+}
+
+.notion-section p,
+.notion-section span,
+.notion-section label {
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+}
+
+.notion-section {
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
