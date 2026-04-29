@@ -1,21 +1,12 @@
-# PPWL 12 - FE - Clone
-Kelas Praktikum Pemograman Web Lanjut 2026 (Sistem Informasi/UNTAN). Minggu ke-12. 
-- Tiap tim diberi beberapa url sub page (Home, Detail, etc.) dari web yang sama.
-- Menggunakan React TS & TailwindCSS, mahasiswa diharapkan dapat membuat UI dan interaksi page yang sama persis seperti di referensi. Nilai plus jika terdapat CSS ataupun Component UI yang terintegrasi.
+**Class B / Team 3**
 
-> [!NOTE]
-> Lihat `instruction.md` untuk instruksi pengerjaan.
-> Gunakan file `README.md` ini sebagai laporan. Isi laporan berupa nama tim & page yang tiap anggota handle. 
+Main Web: [notion.com](https://www.notion.com/)
 
-**Class A / Team 1**
-
-Main Web: [kokbisa.id](https://www.kokbisa.id/)
-
-|        Name       |    NIM     | Reference Page | Spesific Component |
-|-------------------|------------|----------------|--------------------|
-| Leo Prangs Tobing | H110124000 | [Page1-Home](https://www.kokbisa.id/) | Navbar, Header Carousel |
-| Other             | H110124000 | [Page1-Home](https://www.kokbisa.id/) | Main |
-| Other             | H110124000 | [Page1-Home](https://www.kokbisa.id/) | Footer |
-| Other             | H110124000 | [Page2-Langganan](https://www.kokbisa.id/langganan) | Title Area |
-| Other             | H110124000 | [Page2-Langganan](https://www.kokbisa.id/langganan) | Form Area |
-| Other             | H110124000 | [Page2-Langganan](https://www.kokbisa.id/langganan) | Button Area |
+| Name | NIM | Reference Page | Specific Component |
+|---------------------------|-------------|---------------------------------------|------------------------------------------------------------------------------------------------------|
+| Timothy Walukow | H1101241048 | [Page-Home](https://www.notion.so/) | Navbar, Header dan Footer |
+| Zulfikarnaen | H1101241009 | [Page-Home](https://www.notion.so/) | Hero Section |
+| Virsya Meidina Andriadie | H1101241004 | [Page-Home](https://www.notion.so/) | Keep work moving 24/7 Section |
+| Mas Jihan Afra Auzia | H1101241011 | [Page-Home](https://www.notion.so/) | Ask your on-demand assistants Section |
+| Nadya Aulia Tiarani | H1101241030 | [Page-Home](https://www.notion.so/) | Bring all your work together Section |
+| Audy Mastel | H1101241020 | [Page-Home](https://www.notion.so/) | More productivity. Fewer tools., Trusted by teams that ship, dan Try for free Section |
