@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, Search, CheckSquare, Sparkles, FolderClosed, ThumbsUp, ThumbsDown, Copy, RotateCcw } from 'lucide-react';
 
 export default function Askyou() {
