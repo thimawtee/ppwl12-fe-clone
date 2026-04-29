@@ -1,5 +1,4 @@
   import React, { useRef, useState } from "react";
-  import Button from "./ui/Button";
   import Container from "./ui/Container";
 
   const Hero: React.FC = () => {
