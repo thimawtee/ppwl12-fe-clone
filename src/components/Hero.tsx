@@ -328,9 +328,51 @@ const Hero: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Footer Brand Partners */}
+        {/* Footer Brand Partners */}
+  <div className="mt-6 flex flex-col items-center">
+    <p className="text-[#c0c1ce] text-[16px]  mb-10 tracking-wide">
+    Trusted by 98% of the Forbes Cloud 100
+  </p>
+
+    <div className="flex flex-col gap-8 items-center px-6">
+      {/* Row 1 */}
+      <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+        {[
+          { alt: "OpenAI", src: "https://images.ctfassets.net/spoqsaf9291f/4MHGeZRO6fDOLPVyJsLoyQ/73cf5bcef2edb384dc8989ebddd7975e/Company_openai__Colorway_White.svg" },
+          { alt: "Figma", src: "https://images.ctfassets.net/spoqsaf9291f/5JgmuggsW4KO8pYqbKUUeW/9d4781445ff35516224384dc1c4f417c/figma-white.svg" },
+          { alt: "Ramp", src: "https://images.ctfassets.net/spoqsaf9291f/1DEacqNIZ316cGgB4hhZRL/d77ff0228469f25ee2c76af41ef2e6ac/Company_Ramp__Colorway_White.svg" },
+          { alt: "Cursor", src: "https://images.ctfassets.net/spoqsaf9291f/OJRQbA3XzRNfCfMh3UWf4/76408a06d9d9a1ed52fcd109b264de80/Company_Cursor__Colorway_White.svg" },
+          { alt: "Vercel", src: "https://images.ctfassets.net/spoqsaf9291f/4Q8UO6GLVXAipkW53CHm33/8ccdeeb5bf1834ead706299d665eac72/Company_Vercel__Colorway_White.svg" },
+          { alt: "Nvidia", src: "https://images.ctfassets.net/spoqsaf9291f/1Y4mbag3O14GsqnVtxgyZn/93c685d16fde556fff58eeeade5b49a7/Company_Nvidia__Colorway_White.svg" },
+          { alt: "Volvo", src: "https://images.ctfassets.net/spoqsaf9291f/7ciuOUOhooC7cNnVsY107S/094eda50eab266d434b98ae4d02058bc/Company_Volvo__Colorway_White.svg" },
+          { alt: "L'Oreal", src: "https://images.ctfassets.net/spoqsaf9291f/59zguR94wceWZDPFJKVIW6/a8c6beae3ee7122dccfcb4c01d9fcb81/Loreal-w.svg" },
+          { alt: "Discord", src: "https://images.ctfassets.net/spoqsaf9291f/7g5fhJqqpJd9yV9NnCgFkY/30ee55c57abecc9a6a71e50cf82fe66a/Company_discord__Colorway_White.svg" }
+        ].map((brand) => (
+          <img key={brand.alt} src={brand.src} alt={brand.alt} className="h-6 opacity-70" />
+        ))}
       </div>
-    </section>
-  );
-};
+
+      {/* Row 2 */}
+      <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+        {[
+          { alt: "Lovable", src: "https://images.ctfassets.net/spoqsaf9291f/37SK9lIa1OaS0dMoDX6rCO/e2d6419a56b97b7d9a654d883e5c9da7/Lovable.png" },
+          { alt: "1Password", src: "https://images.ctfassets.net/spoqsaf9291f/3KhAgvDae5snPMqs2lBxGn/e710daadbc24f003d47c74c1de8cf4c5/Company_1pass__Colorway_White.svg" },
+          { alt: "Affirm", src: "https://images.ctfassets.net/spoqsaf9291f/3YKWf2H75kul3Qa0iVrzub/8def6306ad9c776ede00cd9b3480196b/Company_Affirm__Colorway_White.svg" },
+          { alt: "Riot Games", src: "https://images.ctfassets.net/spoqsaf9291f/5NkNtsLPEfS7aqLZMFQyXg/be877e93ccf9d5397ec3f6f72aa0e359/Company_Riot_Games__Colorway_White.svg" },
+          { alt: "Clay", src: "https://images.ctfassets.net/spoqsaf9291f/Nw4dcqUrln5PXqHhHr7JW/1485bf145058b040cb59bafb27738e06/clay-mono.svg" },
+          { alt: "Remote", src: "https://images.ctfassets.net/spoqsaf9291f/QL9eDBH8yor68WZLs2cdZ/7637787e18a52cd3bfcffaaa469dd623/Company_Remote__Colorway_White.svg" },
+          { alt: "Faire", src: "https://images.ctfassets.net/spoqsaf9291f/6HI6Z7JAuvLnNK8mDWdnF8/fd2d3b36fc27b8bbad2042136c7991f2/Company_faire__Colorway_White.svg" },
+          { alt: "Toyota", src: "https://images.ctfassets.net/spoqsaf9291f/6tqMLcpPUToUSnubKnHkuZ/22f1df2d90af8a807f6fb8b39525215e/toyota.svg" }
+        ].map((brand) => (
+          <img key={brand.alt} src={brand.src} alt={brand.alt} className="h-5 opacity-50" />
+        ))}
+      </div>
+    </div>
+  </div>
+      </section>
+    );
+  };
 
 export default Hero;
